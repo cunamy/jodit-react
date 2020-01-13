@@ -32,9 +32,10 @@ const JoditEditor = forwardRef(({value, config, onChange, onBlur, tabIndex, name
 		textArea.current.events.on('change', () => changeHandler(textArea.current.value));
 		textArea.current.workplace.tabIndex = tabIndex || -1;
 
+		const elem = textArea.current.element;
 		return () => {
 			textArea.current.destruct();
-      textArea.current = textArea.current.element;
+			textArea.current = elem;
 		}
 	}, [config]);
 
