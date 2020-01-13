@@ -42,6 +42,9 @@ export default class From extends Component {
     render () {
         return <div>
             <JoditEditor
+                editorRef={(e)=>{
+                    console.log(e);
+                }}
                 value={this.state.value}
                 config={this.state.config}
                 onChange={console.log}
